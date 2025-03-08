@@ -64,3 +64,4 @@ if __name__ == "__main__":
 
     # Cleanup cache
     clear_cache(cache_dir)
+    print("Finished benchmarking.")
