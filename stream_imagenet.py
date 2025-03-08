@@ -4,7 +4,7 @@ from time import time
 import torch
 import torchvision.transforms.v2 as T
 from lightning import seed_everything
-from litdata import StreamingDataLoader, StreamingDataset
+from litdata import StreamingDataLoader, StreamingDataset, __version__
 from tqdm import tqdm
 from utils import clear_cache, to_rgb
 
@@ -35,6 +35,8 @@ class ImageNetStreamingDataset(StreamingDataset):
 if __name__ == "__main__":
     # Fixed the seed across packages
     seed_everything(42)
+
+    print(f"Benchmarking using litdata version: {__version__}")
 
     # Clean cache
     cache_dir = "/cache/chunks/"
