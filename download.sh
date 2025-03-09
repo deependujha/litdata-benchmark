@@ -13,7 +13,7 @@ cd /cache || exit
 chmod 600 "$KAGGLE_DIR/kaggle.json"
 
 # Download and unzip dataset
-# kaggle competitions download -c imagenet-object-localization-challenge
+kaggle competitions download -c imagenet-object-localization-challenge
 unzip -qq imagenet-object-localization-challenge.zip '*.JPEG' -d ./data
 
 # Copy dataset to desired location
