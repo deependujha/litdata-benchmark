@@ -89,20 +89,20 @@ def get_inputs(input_dir: str) -> Any:
 def optimize_fn(data, args):
     filepath, class_index = data
     img = Image.open(filepath)
-    if args.resize:
-        img = img.resize((224, 224))
+    # if args.resize:
+    #     img = img.resize((224, 224))
 
-    if not args.filepath_only:
-        return img, class_index
+    # if not args.filepath_only:
+    #     return img, class_index
 
-    # Used only to build optimized search indexes
-    filepath = "/".join(filepath.split("/")[3:])
+    # # Used only to build optimized search indexes
+    # filepath = "/".join(filepath.split("/")[3:])
 
-    if args.use_jpeg_90:
-        buff = io.BytesIO()
-        img.convert("RGB").save(buff, format="JPEG", quality=90)
-        buff.seek(0)
-        img = Image.open(buff)
+    # if args.use_jpeg_90:
+    #     buff = io.BytesIO()
+    #     img.convert("RGB").save(buff, format="JPEG", quality=90)
+    #     buff.seek(0)
+    #     img = Image.open(buff)
 
     return img, class_index
 
