@@ -54,6 +54,8 @@ python run_benchmark.py # executes in a separate A10G studio
 or
 ```sh
 python stream_imagenet.py # runs in the current studio
+
+python stream_imagenet.py | tee logs/benchmark-run-0.log
 ```
 
 Follow these steps to successfully benchmark LitData. Happy benchmarking!
