@@ -86,7 +86,7 @@ def get_inputs(input_dir: str) -> Any:
 def optimize_fn(data, args):
     filepath, class_index = data
     img = Image.open(filepath)
-    print(f"Processing file: {filepath}, Image shape: {img.size}")
+    # print(f"Processing file: {filepath}, Image shape: {img.size}")
     # if args.resize:
     #     img = img.resize((224, 224))
 
