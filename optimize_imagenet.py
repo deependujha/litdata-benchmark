@@ -10,7 +10,12 @@ from lightning import seed_everything
 from litdata import __version__, optimize, walk
 from PIL import Image
 from tqdm import tqdm
-from utils import class_names_to_index_map, clear_cache, load_imagenet_val_class_names
+from utils import (
+    class_names_to_index_map,
+    clear_cache,
+    load_imagenet_val_class_names,
+    load_imagenet_class_index,
+)
 
 
 def parse_args() -> Namespace:
@@ -54,23 +59,13 @@ def parse_args() -> Namespace:
     return args.parse_args()
 
 
-def get_classes(input_dir: str) -> Tuple[List[int], List[str]]:
-    """Get the classes for a dataset split of sample image filenames."""
-    with open(
-        os.path.join(os.path.expanduser("~"), "imagenet_class_index.json"), "r"
-    ) as f:
-        data = json.load(f)
-
-    return {v[0]: int(k) for k, v in data.items()}
-
-
 def get_class_from_filepath(filepath: str, classes) -> int:
     class_name = filepath.split("/")[-2]
     return classes[class_name]
 
 
 def get_inputs(input_dir: str) -> Any:
-    classes = get_classes(input_dir)
+    classes = load_imagenet_class_index()
     filepaths = np.random.permutation(
         [
             os.path.join(root, filename)
@@ -123,7 +118,7 @@ if __name__ == "__main__":
 
     optimize(
         fn=partial(optimize_fn, args=args),
-        inputs=inputs,
+        inputs=inputs[:100],
         output_dir=args.output_dir,
         chunk_bytes="64MB",
         reorder_files=False,
