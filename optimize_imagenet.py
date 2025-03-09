@@ -124,6 +124,7 @@ if __name__ == "__main__":
         chunk_bytes="64MB",
         reorder_files=False,
         num_downloaders=10,
+        mode="overwrite",
     )
 
     clear_cache(cache_dir)
