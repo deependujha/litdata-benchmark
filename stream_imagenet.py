@@ -26,10 +26,10 @@ class ImageNetStreamingDataset(StreamingDataset):
         img, class_index = super().__getitem__(
             index
         )  # <- Whatever you returned from the DatasetOptimizer prepare_item method.
-        # return self.transform(to_rgb(img)), int(class_index)
-        return self.transform(
-            to_rgb(img)
-        ), class_index  # int cannot be used as class_index is a filepath string
+        return self.transform(to_rgb(img)), int(class_index)
+        # return self.transform(
+        #     to_rgb(img)
+        # ), class_index  # int cannot be used as class_index is a filepath string
 
 
 if __name__ == "__main__":
