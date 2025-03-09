@@ -19,4 +19,5 @@ jobs_plugin.run(
     job_cmd,
     name=f"prepare-imagenet-1m-using-litdata-{__version__}",
     machine=Machine.DATA_PREP,
+    interruptible=False,
 )
