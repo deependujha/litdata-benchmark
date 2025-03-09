@@ -118,7 +118,7 @@ if __name__ == "__main__":
 
     optimize(
         fn=partial(optimize_fn, args=args),
-        inputs=inputs[:100],
+        inputs=inputs,
         output_dir=args.output_dir,
         chunk_bytes="64MB",
         reorder_files=False,
