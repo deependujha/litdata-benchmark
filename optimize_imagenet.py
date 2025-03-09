@@ -40,19 +40,16 @@ def parse_args() -> Namespace:
     )
     args.add_argument(
         "--resize",
-        default="False",
         action="store_true",
         help="Whether to resize the images to (224, 244).",
     )
     args.add_argument(
         "--filepath_only",
-        default="False",
         action="store_true",
         help="Whether to store only the image and the original filepath.",
     )
     args.add_argument(
         "--use_jpeg_90",
-        default="False",
         action="store_true",
         help="Whether to store the images as JPEG.",
     )
@@ -114,6 +111,8 @@ if __name__ == "__main__":
     clear_cache(cache_dir)
 
     args = parse_args()
+    print(f"Arguments: {vars(args)}")
+    
 
     inputs = get_inputs(args.input_dir)
 
