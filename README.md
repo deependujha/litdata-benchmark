@@ -4,6 +4,23 @@ This starter kit will guide you through the process of benchmarking LitData in *
 Follow the steps below to get started.
 > This starter kit has been prepared with reference from the [LitData Benchmarking Guide](https://lightning.ai/lightning-ai/studios/benchmark-cloud-data-loading-libraries?view=org&section=featured).
 
+## Prerequisites
+
+1. Clone the GitHub repository:
+    ```sh
+    git clone https://github.com/bhimrazy/litdata-benchmark
+    ```
+
+2. Navigate to the project directory:
+    ```sh
+    cd litdata-benchmark
+    ```
+
+3. Install the required dependencies:
+    ```sh
+    pip install -U -r requirements.txt
+    ```
+
 ## Step 1: Download Data (Optional)
 
 You can download the data from Kaggle if you prefer. However, there is already imagenet data available in `/teamspace/s3_connections/imagenet-1m-template/raw/` that you can use.
