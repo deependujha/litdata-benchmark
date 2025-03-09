@@ -16,7 +16,7 @@ class ImageNetStreamingDataset(StreamingDataset):
             [
                 T.RandomResizedCrop(224, antialias=True),
                 T.RandomHorizontalFlip(),
-                T.ToDtype(torch.float16, scale=True),
+                T.ToDtype(torch.float32, scale=True),
             ]
         )
         super().__init__(*args, **kwargs)
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # Define the DataLoader
     dataloader = StreamingDataLoader(
         ImageNetStreamingDataset(
-            input_dir="/teamspace/datasets/imagenet-1m-optimized-0.2.41/train",
+            input_dir="/teamspace/datasets/imagenet-1m-optimized-0.2.41-v2/train",
             max_cache_size="200GB",
         ),
         batch_size=256,
