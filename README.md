@@ -58,4 +58,22 @@ python stream_imagenet.py # runs in the current studio
 python stream_imagenet.py | tee logs/benchmark-run-0.log
 ```
 
-Follow these steps to successfully benchmark LitData. Happy benchmarking!
+Note: The log files follow a specific naming convention to help identify the details of each benchmark run. The format is as follows:
+
+```
+benchmark-MM-DD-v<version>-<downloader>-<dtype>-run-<run_number>.log
+```
+
+Where:
+- `MM-DD` is the month and day of the benchmark run.
+- `<version>` is the version of the litdata used to benchmark.
+- `<downloader>` is the tool used for downloading the data (e.g., `s5cmd` or `boto3`)..
+- `<dtype>` indicates the data type used (e.g., `f32` or `f16`).
+- `<run_number>` is the sequential number of the run.
+
+Example:
+```
+benchmark-03-15-v0.2.41-s5cmd-f32-run-0.log
+````
+
+Follow these steps to successfully benchmark LitData. Happy benchmarking! 🎉
