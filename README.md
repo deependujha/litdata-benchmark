@@ -92,5 +92,13 @@ DATASET=0 SHUFFLE=1 PRELOAD=1 LOW_MEMORY=0 python stream_hf_dataset.py
 - `PRELOAD`: Set to `1` to enable preloading the chunk, or `0` to disable it.
 - `LOW_MEMORY`: Set to `1` to enable low-memory mode, which reduces memory usage at the cost of performance, or `0` to disable it.
 
+**Example Scripts**
+``` 
+DATASET=0 SHUFFLE=0 PRELOAD=0 LOW_MEMORY=1  python stream_hf_dataset.py 
+DATASET=0 SHUFFLE=0 PRELOAD=0 LOW_MEMORY=0  python stream_hf_dataset.py
+DATASET=0 SHUFFLE=0 PRELOAD=1 LOW_MEMORY=0  python stream_hf_dataset.py
+DATASET=0 SHUFFLE=1 PRELOAD=0 LOW_MEMORY=0  python stream_hf_dataset.py
+
+```
 
 Follow these steps to successfully benchmark LitData. Happy benchmarking! 🎉
