@@ -49,7 +49,7 @@ if __name__ == "__main__":
             max_cache_size="200GB",
         ),
         batch_size=256,
-        num_workers=os.cpu_count(),
+        num_workers=os.cpu_count(),  # type: ignore
         # profile_batches=10,
     )
 
