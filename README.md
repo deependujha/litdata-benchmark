@@ -76,4 +76,21 @@ Example:
 benchmark-03-15-v0.2.41-s5cmd-f32-run-0.log
 ````
 
+## Benchmark Hugging Face Datasets
+
+> **Note**: This section is currently under active development and may be updated frequently.
+
+To benchmark Hugging Face datasets, you can use the following command:
+
+```sh
+DATASET=0 SHUFFLE=1 PRELOAD=1 LOW_MEMORY=0 python stream_hf_dataset.py
+```
+
+### Explanation of Parameters:
+- `DATASET`: Specifies the dataset to be used. Replace `0` with the desired dataset index or identifier.
+- `SHUFFLE`: Set to `1` to enable shuffling of the dataset, or `0` to disable it.
+- `PRELOAD`: Set to `1` to enable preloading the chunk, or `0` to disable it.
+- `LOW_MEMORY`: Set to `1` to enable low-memory mode, which reduces memory usage at the cost of performance, or `0` to disable it.
+
+
 Follow these steps to successfully benchmark LitData. Happy benchmarking! 🎉
