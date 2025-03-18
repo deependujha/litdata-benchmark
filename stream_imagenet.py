@@ -50,6 +50,7 @@ if __name__ == "__main__":
         ),
         batch_size=256,
         num_workers=os.cpu_count(),
+        # profile_batches=10,
     )
 
     # Iterate over the datasets for 2 epochs
