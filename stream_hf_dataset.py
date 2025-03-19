@@ -17,6 +17,9 @@ DATASET: bool = bool(int(os.getenv("DATASET", 0)))
 if __name__ == "__main__":
     # Fixed the seed across packages
     seed_everything(42)
+    # Clean cache
+    cache_dir = str(Path.home() / ".cache" / "litdata-cache-index-pq")
+    clear_cache(cache_dir)
 
     DATASETS = [
         "hf://datasets/open-thoughts/OpenThoughts-114k/data",
@@ -28,10 +31,6 @@ if __name__ == "__main__":
     print(
         f"Shuffle: {SHUFFLE}, Preload: {PRELOAD}, Low Memory: {LOW_MEMORY} \nDataset: {ACTIVE_DATASET}"
     )
-
-    # Clean cache
-    cache_dir = str(Path.home() / ".cache" / "litdata-cache-index-pq")
-    clear_cache(cache_dir)
 
     # Define the StreamingDataset
     dataset = StreamingDataset(
