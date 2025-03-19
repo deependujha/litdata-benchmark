@@ -48,15 +48,25 @@ if __name__ == "__main__":
     # batch
     dataset = dataset.batch(batch_size=256, drop_last_batch=True)
 
+    # Define the number of available CPU cores
+    cpu_count = os.cpu_count()
+    # Get the number of available shards from the dataset
+    num_shards = dataset.num_shards
+    # Set num_workers to the minimum of CPU cores and dataset shards
+    num_workers = min(cpu_count, num_shards)
+
     # Define the DataLoader
-    dataloader = DataLoader(dataset, num_workers=os.cpu_count())
+    dataloader = DataLoader(
+        dataset, num_workers=num_workers
+    )  # doesn't seem to accept num_workers > num_shards
 
     # Iterate over the datasets for 2 epochs
     for epoch in range(2):
         num_samples = 0
         t0 = time()
         dataset.set_epoch(epoch)
-        for data in tqdm(dataloader, smoothing=0, mininterval=1):
+        for i, data in enumerate(tqdm(dataloader, smoothing=0, mininterval=1)):
+            print("Batch:", i)
             num_samples += len(data[list(data.keys())[0]])
         print(
             f"For {__file__} on {epoch}, streamed over {num_samples} samples in {time() - t0} or {num_samples / (time() - t0)} samples/sec."
