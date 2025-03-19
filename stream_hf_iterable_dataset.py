@@ -45,19 +45,9 @@ if __name__ == "__main__":
     if SHUFFLE:
         dataset = dataset.shuffle(seed, buffer_size=buffer_size)
 
-    # batch
-    dataset = dataset.batch(batch_size=256, drop_last_batch=True)
-
-    # Define the number of available CPU cores
-    cpu_count = os.cpu_count()
-    # Get the number of available shards from the dataset
-    num_shards = dataset.num_shards
-    # Set num_workers to the minimum of CPU cores and dataset shards
-    num_workers = min(cpu_count, num_shards)
-
     # Define the DataLoader
     dataloader = DataLoader(
-        dataset, num_workers=num_workers
+        dataset, batch_size=256, num_workers=os.cpu_count(), drop_last=True
     )  # doesn't seem to accept num_workers > num_shards
 
     # Iterate over the datasets for 2 epochs
