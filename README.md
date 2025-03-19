@@ -83,6 +83,7 @@ benchmark-03-15-v0.2.41-s5cmd-f32-run-0.log
 1. Dataset: [fineweb-edu (10BT Sample)](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/tree/main/sample/10BT) (~26 GB)  
 
 > **Note**: This section is currently under active development and may be updated frequently.
+> HF_HUB_ENABLE_HF_TRANSFER = 1
 
 To benchmark Hugging Face datasets, you can use the following command:
 
