@@ -66,7 +66,6 @@ if __name__ == "__main__":
         t0 = time()
         dataset.set_epoch(epoch)
         for i, data in enumerate(tqdm(dataloader, smoothing=0, mininterval=1)):
-            print("Batch:", i)
             num_samples += len(data[list(data.keys())[0]])
         print(
             f"For {__file__} on {epoch}, streamed over {num_samples} samples in {time() - t0} or {num_samples / (time() - t0)} samples/sec."
