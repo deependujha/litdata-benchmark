@@ -86,6 +86,8 @@ benchmark-03-15-v0.2.41-s5cmd-f32-run-0.log
 
 To benchmark Hugging Face datasets, you can use the following command:
 
+### Using LitData
+
 ```sh
 DATASET=0 SHUFFLE=1 PRELOAD=1 LOW_MEMORY=0 python stream_hf_dataset.py
 ```
@@ -109,6 +111,11 @@ DATASET=0 SHUFFLE=1 PRELOAD=1 LOW_MEMORY=0  python stream_hf_dataset.py
 DATASET=1 SHUFFLE=0 PRELOAD=0 LOW_MEMORY=1  python stream_hf_dataset.py 
 
 
+```
+
+### Using huggingface datasets streaming
+```
+DATASET=0 SHUFFLE=1 python stream_hf_iterable_dataset.py
 ```
 
 Follow these steps to successfully benchmark LitData. Happy benchmarking! 🎉
