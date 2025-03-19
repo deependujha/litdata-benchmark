@@ -115,7 +115,7 @@ DATASET=1 SHUFFLE=0 PRELOAD=0 LOW_MEMORY=1  python stream_hf_dataset.py
 
 ### Using huggingface datasets streaming
 ```
-DATASET=0 SHUFFLE=1 python stream_hf_iterable_dataset.py
+DATASET=0 SHUFFLE=0 python stream_hf_iterable_dataset.py
 ```
 
 Follow these steps to successfully benchmark LitData. Happy benchmarking! 🎉
