@@ -80,7 +80,7 @@ benchmark-03-15-v0.2.41-s5cmd-f32-run-0.log
 
 ## Benchmark Hugging Face Datasets
 0. Dataset: [OpenThoughts-114k](https://huggingface.co/datasets/open-thoughts/OpenThoughts-114k) (3.55 GB)  
-1. Dataset: [fineweb-edu (10BT Sample)](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/tree/main/sample/10BT) (~25 GB)  
+1. Dataset: [fineweb-edu (10BT Sample)](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/tree/main/sample/10BT) (~26 GB)  
 
 > **Note**: This section is currently under active development and may be updated frequently.
 
