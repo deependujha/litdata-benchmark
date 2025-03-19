@@ -95,9 +95,15 @@ DATASET=0 SHUFFLE=1 PRELOAD=1 LOW_MEMORY=0 python stream_hf_dataset.py
 **Example Scripts**
 ``` 
 DATASET=0 SHUFFLE=0 PRELOAD=0 LOW_MEMORY=1  python stream_hf_dataset.py 
+DATASET=0 SHUFFLE=1 PRELOAD=0 LOW_MEMORY=1  python stream_hf_dataset.py 
 DATASET=0 SHUFFLE=0 PRELOAD=0 LOW_MEMORY=0  python stream_hf_dataset.py
-DATASET=0 SHUFFLE=0 PRELOAD=1 LOW_MEMORY=0  python stream_hf_dataset.py
 DATASET=0 SHUFFLE=1 PRELOAD=0 LOW_MEMORY=0  python stream_hf_dataset.py
+DATASET=0 SHUFFLE=0 PRELOAD=1 LOW_MEMORY=0  python stream_hf_dataset.py
+DATASET=0 SHUFFLE=1 PRELOAD=1 LOW_MEMORY=0  python stream_hf_dataset.py
+
+
+DATASET=1 SHUFFLE=0 PRELOAD=0 LOW_MEMORY=1  python stream_hf_dataset.py 
+
 
 ```
 
