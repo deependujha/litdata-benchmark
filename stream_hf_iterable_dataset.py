@@ -28,7 +28,7 @@ if __name__ == "__main__":
             "split": "train",
         },
         {
-            "path": "HuggingFaceFW/fineweb",
+            "path": "HuggingFaceFW/fineweb-edu",
             "name": "sample-10BT",
             "split": "train",
         },
@@ -39,7 +39,9 @@ if __name__ == "__main__":
     split = ACTIVE_DATASET["split"]
     print(f"Shuffle: {SHUFFLE} Dataset: {path}/{name}")
 
-    dataset = load_dataset(path, name, split=split, cache_dir=cache_dir, streaming=True)
+    dataset = load_dataset(
+        path=path, name=name, split=split, cache_dir=cache_dir, streaming=True
+    )
 
     seed, buffer_size = SEED, 10_000
     if SHUFFLE:
