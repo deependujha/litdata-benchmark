@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e # ensures the script exits immediately if any command fails.
+
 # Set variables
 STUDIO_DIR="/teamspace/studios/this_studio"
 KAGGLE_DIR="$STUDIO_DIR/.kaggle"
