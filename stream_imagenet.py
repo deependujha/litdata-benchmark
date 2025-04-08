@@ -1,9 +1,9 @@
 import os
 from time import time
 
+import lightning as L
 import torch
 import torchvision.transforms.v2 as T
-from lightning import seed_everything
 from litdata import StreamingDataLoader, StreamingDataset, __version__
 from tqdm import tqdm
 from utils import clear_cache, to_rgb
@@ -34,13 +34,17 @@ class ImageNetStreamingDataset(StreamingDataset):
 
 if __name__ == "__main__":
     # Fixed the seed across packages
-    seed_everything(42)
+    L.seed_everything(42)
 
     print(f"Benchmarking using litdata version: {__version__}")
 
     # Clean cache
     cache_dir = "/cache/chunks/"
     clear_cache(cache_dir)
+    
+    # # Uncomment the following lines to use DDP
+    # fabric = L.Fabric(strategy="ddp", accelerator="cpu", devices=2)
+    # fabric.launch()
 
     # Define the DataLoader
     dataloader = StreamingDataLoader(
