@@ -53,7 +53,7 @@ if __name__ == "__main__":
         num_samples = 0
         t0 = time()
         for data in tqdm(dataloader, smoothing=0, mininterval=1):
-            num_samples += len(data[0])
+            num_samples += len(data[list(data.keys())[0]])
         print(
             f"For {__file__} on {epoch}, streamed over {num_samples} samples in {time() - t0} or {num_samples / (time() - t0)} samples/sec."
         )
