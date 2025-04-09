@@ -14,7 +14,7 @@ jobs_plugin = s.installed_plugins["jobs"]
 # --------------------------
 # Launch job to optimize the data
 # --------------------------
-job_cmd = f"cd benchmark && python optimize_imagenet.py --input_dir /teamspace/s3_connections/imagenet-1m-template/raw/train --output_dir /teamspace/datasets/imagenet-1m-optimized-{__version__}/train"
+job_cmd = f"python optimize_imagenet.py --input_dir /teamspace/s3_connections/imagenet-1m-template/raw/train --output_dir /teamspace/datasets/imagenet-1m-optimized-{__version__}/train"
 jobs_plugin.run(
     job_cmd,
     name=f"prepare-imagenet-1m-using-litdata-{__version__}",
