@@ -63,6 +63,7 @@ if __name__ == "__main__":
         t0 = time()
         for data in tqdm(dataloader, smoothing=0, mininterval=1):
             num_samples += data[0].squeeze(0).shape[0]
+            # torch.distributed.barrier() # Uncomment to use DDP
         print(
             f"For {__file__} on {epoch}, streamed over {num_samples} samples in {time() - t0} or {num_samples / (time() - t0)} images/sec."
         )
